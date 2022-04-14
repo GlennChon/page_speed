@@ -1,4 +1,4 @@
-# cloud_function_template
+# cloud-function-template
 
 Description: ...
 Template setup for google cloud functions
