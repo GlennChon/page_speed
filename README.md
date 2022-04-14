@@ -5,7 +5,7 @@ Template setup for google cloud functions
 
 ## Installation
 
-- gh repo clone GlennChon/cloud-function-template
+``` gh repo clone GlennChon/cloud-function-template ```
 - Replace all function_name or functionName with a given name
     - Locations: package.json: name & scripts.dev, cloudbuild.yaml
 - npm install to install all dependencies
@@ -19,7 +19,7 @@ Template setup for google cloud functions
     - Push to repo to trigger build
 - In Cloud Functions
     - Assign appropriate runtime service account.
-    - Add runtime env vars if applicable
+    - Add runtime env vars (if applicable)
     - Egress settings: assign VPC Connector (if applicable)
     - Redeploy or push a new version
 
