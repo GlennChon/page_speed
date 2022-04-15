@@ -1,11 +1,12 @@
 # page_speed
 
-Description: google lighthouse page speed scores
+Google Lighthouse page speed scores
 
 ## Installation
 
-```sh gh repo clone GlennChon/page_speed ```
-```sh npm install ```
+``` gh repo clone GlennChon/page_speed ```
+
+``` npm install ```
 
 ## Page Speed
 [Getting Started with PageSpeed Insights](https://developers.google.com/speed/docs/insights/v5/get-started)
@@ -26,20 +27,22 @@ Description: google lighthouse page speed scores
 
 ## Scripts
 Build:
-```sh npm run build ```
+
+``` npm run build ```
 
 Local run:
-```sh npm run dev ```
+
+``` npm run dev ```
 
 ## Deployment
 - Create repo on github
     - Push to main
     - Create deployment branch: e.g. gcp_deploy
-    - Merge main into deployment branch
-- Create cloud trigger
+    - Merge main into deployment branch and push
+- Create cloud build trigger
     - Name the trigger: pageSpeedTrigger
-    - Link previously created repo to build on deployment branch push
-    - Push to repo to trigger build
+    - Link previously created repo to invoke on deployment branch push event
+    - Push to repo to trigger build or run from GCP interface
 - Cloud Functions
     - Assign appropriate runtime service account
     - Add runtime env vars (if applicable)
@@ -53,10 +56,10 @@ Send the following to your cloud function trigger url:
 // url: https://example.com
 // strategy: 'desktop' | 'mobile'
 // category: ["accessibility", "best-practices", "performance", "pwa", "seo"]  
-type PageSpeedParams {
+type PageSpeedModel {
     url:string
     strategy: string 
-    category: string[]  
+    category?: string[]  
 }
 
 ```
