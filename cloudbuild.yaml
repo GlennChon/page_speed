@@ -11,7 +11,7 @@ steps:
       - gcloud
       - functions
       - deploy
-      - functionName # replace with name
+      - pageSpeed # replace with name
       - --region=us-central1
       - --source=.
       - --runtime=nodejs16
