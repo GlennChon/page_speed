@@ -10,14 +10,14 @@ import { google } from 'googleapis'
  **/
 
 //https://developers.google.com/speed/docs/insights/v5/reference/pagespeedapi/runpagespeed
-interface PageSpeedModel {
+interface IPageSpeed {
 	url: string
 	strategy: string //desktop || mobile
 	category?: string[] // accessibility, best-practices, performance, pwa, seo
 }
   
 export const pageSpeed = async (
-	req: Request<{}, {}, PageSpeedModel>,
+	req: Request<{}, {}, IPageSpeed>,
 	res: Response,
 ) => {
 	let statusCode:number
@@ -28,8 +28,8 @@ export const pageSpeed = async (
 	if (req.method === 'OPTIONS') {
 	  // Send response to OPTIONS requests
 		res.set({
-		  'Access-Control-Allow-Methods': 'GET',
-		  'Access-Control-Allow-Headers': ['Content-Type', 'Authorization'],
+		  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+		  'Access-Control-Allow-Headers': 'Content-Type, Authorization',
 		  'Content-Type': 'application/json',
 		  'Access-Control-Max-Age': '3600',
 		})
