@@ -23,11 +23,13 @@ export const pageSpeed = async (
 	let statusCode:number
 	let responseBody:any
 	res.set('Access-Control-Allow-Origin', '*')
+	res.set('Access-Control-Allow-Credentials', 'true');
+
 	if (req.method === 'OPTIONS') {
 	  // Send response to OPTIONS requests
 		res.set({
-		  'Access-Control-Allow-Methods': 'GET, POST',
-		  'Access-Control-Allow-Headers': 'Content-Type',
+		  'Access-Control-Allow-Methods': 'GET',
+		  'Access-Control-Allow-Headers': ['Content-Type', 'Authorization'],
 		  'Content-Type': 'application/json',
 		  'Access-Control-Max-Age': '3600',
 		})

@@ -34,6 +34,12 @@ Local run:
 
 ``` npm run dev ```
 
+Use:
+``` gcloud auth print-identity-token ```
+Pass as bearer token for ThunderClient cloudFunction production deployment test
+token is valid for 1 hour
+
+
 ## Deployment
 - Create repo on github
     - Push to main
