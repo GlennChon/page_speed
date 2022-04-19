@@ -23,19 +23,19 @@ export const pageSpeed = async (
 	let statusCode:number
 	let responseBody:any
 
-	// res.set('Access-Control-Allow-Origin', '*')
+	res.set('Access-Control-Allow-Origin', '*')
 
-	// if (req.method === 'OPTIONS') {
-	//   // Send response to OPTIONS requests
-	// 	res.set({
-	// 	  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-	// 	  'Access-Control-Allow-Headers': 'Content-Type',
-	// 	  'Access-Control-Max-Age': '3600',
-	// 	})
-	// 	statusCode = 204
-	// 	responseBody = ''	  
-	// 	return res.status(statusCode).send(responseBody)
-	// }
+	if (req.method === 'OPTIONS') {
+	  // Send response to OPTIONS requests
+		res.set({
+		  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+		  'Access-Control-Allow-Headers': 'Content-Type',
+		  'Access-Control-Max-Age': '3600',
+		})
+		statusCode = 204
+		responseBody = ''	  
+		return res.status(statusCode).send(responseBody)
+	}
 	try {	
 		// cloud function code
 		const {category="performance", strategy, url } = req.body
